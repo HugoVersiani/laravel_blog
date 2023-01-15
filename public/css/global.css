@@ -570,9 +570,14 @@ li {
     }
     .right-content h1 {
         margin: 10px 0 0 0;
+        font-size: 1.4rem;
     }
+    #latest {
+        font-size: 2rem;
+        margin: 0;
+        margin-bottom: 10px;
 
-  
+    }
     .tag {
         font-size: 0.8rem;
         color: var(--light-font-color-01);
@@ -586,8 +591,25 @@ li {
     }
     
     #main-div-reading {
-        width: 90%;
+        min-width: 100%;
     }
+    #main-div-reading span{
+        padding: 0 5%;
+        font-size: 0.9rem;
+        color: rgb(114, 114, 114);
+    }
+    #main-div-reading h1 {
+        font-size: 2.2rem;
+        padding: 0 5%;
+    }
+
+    .integra-text p {
+        font-size: 1rem !important;
+        line-height: 25px !important;
+        padding: 0 5%;
+    }
+    
+    
 
 
    
