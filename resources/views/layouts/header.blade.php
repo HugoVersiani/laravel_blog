@@ -1,7 +1,7 @@
 <header class="bg-light header-top">
     <div class="header-div-child-1">
         <div class="header-div-child-2 d-flex">
-            <a>
+            <a href="/">
                 <img class="logo" src="{{asset('img/v-logo-ico.png')}}">
             </a>
             <nav id="nav">
