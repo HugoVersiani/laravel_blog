@@ -16,7 +16,7 @@
                     <a href="{{url('/tags')}}">Tags</a>
                     </li> 
                     <li>
-                    <a>Portifólio</a>
+                    <a href="#">Portifólio</a>
                     </li> 
                     <li>
                       @if(Auth::check())

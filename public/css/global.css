@@ -421,8 +421,8 @@ li {
     font-size: 1.2rem ;
     font-weight: lighter;
     color: var(--light-font-color-01);
-    min-width: 90%;
-    max-width: 90%;
+    min-width: 98%;
+    max-width: 98%;
 }
 #input-login:focus {
     border: 1px solid var(--visual-id-colort);
@@ -450,17 +450,48 @@ li {
 
 .login-div {
     border: 1px solid var(--visual-id-color2);
-    width: 66%;
+    width: 50%;
     margin: auto;
 }
-.login-div-2 header{
-    font-size: 1.8rem;
-    padding: 2%;
 
+.form_login {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.form-login div {
+    min-width: 50%;
+}
+
+.login-div-buttons {
+    display: flex;
+    min-width: 98%;
+    justify-content: space-between;
+    height: 40px;
+} 
+.div-tags {
+    align-items: center;
+}
+.div-tags h1 {
+    font-size: 2.5rem;
 }
 
 
 @media (max-width: 600px) {
+
+    /*Botões*/
+
+    .border-black {
+        margin-top: 3%;
+        height: 30px;
+       
+    }
+    .border-red {
+        margin-top: 1%;
+        height: 30px;
+       
+    }
 
     .header-div-child-1 {
         padding: 5px 0;
@@ -480,6 +511,8 @@ li {
         background-color: var(--light-bg-color);
         visibility: hidden;
         overflow-y: hidden ;
+        text-transform: uppercase;
+        font-size: 1.1rem;
     }
     #nav.active #nav-ul {
         height: calc(100vh - 70px);
@@ -608,6 +641,14 @@ li {
         line-height: 25px !important;
         padding: 0 5%;
     }
+
+    .login-div {
+        border: 1px solid var(--visual-id-color2);
+        width: 90%;
+        margin: 10% auto;
+    }
+    
+    
     
     
 

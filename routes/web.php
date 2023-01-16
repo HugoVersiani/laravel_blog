@@ -21,11 +21,6 @@ Route::resource('/tags', TagsController::class);
 
 Route::get('/home',  [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::resources('/blog', PostsController::class);
-
-
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
