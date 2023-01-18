@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Post_has_tag;
+use App\Models\Tag;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
@@ -12,11 +14,13 @@ class PostsController extends Controller
     public function __construct() {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         return view('blog.index')->with('posts', Post::orderBy('updated_at', 'DESC')->get());
@@ -27,9 +31,11 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
-        return view('blog.create');
+        
+        return view('blog.create')->with('tags', Tag::orderBy('updated_at', 'DESC')->get());;
     }
 
     /**
@@ -38,25 +44,38 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'title'=>'required',
             'description'=>'required',
+            'tags'=>'required',
             'image'=>'required|mimes:jpg,png,jpeg|max:5048'
         ]);
-
+      
+        $tags = $data['tags'];
+        
         $newImageName = uniqid() . '-' . $request->title . '.' . 
         $request->image->extension();
         $request->image->move(public_path('images'), $newImageName);
 
-        Post::create([
+        $post = Post::create([
             'title'=>$request->input('title'),
             'description' => $request->input('description'),
             'slug'=>SlugService::createSlug(Post::class, 'slug', $request->title),
             'image_path' =>  $newImageName,
             'user_id' => auth()->user()->id
         ]);
+
+
+        for($i = 0; $i < sizeof($tags); $i++) {
+            Post_has_tag::create([
+                'post_id'=> $post->id,
+                'tag_id' => $tags[$i]
+            ]);
+        }
+      
 
         return redirect('/blog')->with('message_red', 'Postagem postada com sucesso!');
 
@@ -68,6 +87,7 @@ class PostsController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
+
     public function show($slug)
     {
         return view('blog.show')
@@ -80,6 +100,7 @@ class PostsController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
+
     public function edit($slug)
     {
         return view('blog.edit')
@@ -93,6 +114,7 @@ class PostsController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $slug)
     {
         Post::where('slug', $slug)
@@ -112,6 +134,7 @@ class PostsController extends Controller
      * @param  id  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($slug)
     {
         $post = Post::where('slug', $slug);

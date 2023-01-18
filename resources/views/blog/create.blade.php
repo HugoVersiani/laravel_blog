@@ -46,6 +46,14 @@
                     </a>
                 </button>
             </div>
+
+           
+
+            <select name="tags[]" multiple>
+                @foreach($tags as $tag)
+                    <option value="{{$tag['id']}}"> {{$tag['name']}}</option>
+                @endforeach
+            </select>
         </form>
     </div>
 </section>
