@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-       
+
         Schema::table('post_has_tags', function (Blueprint $table) {
             
             $table->dropForeign('post_has_tags_tag_id_foreign');
@@ -25,6 +25,7 @@ return new class extends Migration
            
             
         });
+   
     }
 
     /**
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts_has_tags');
+        //
     }
 };

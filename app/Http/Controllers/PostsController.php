@@ -23,7 +23,11 @@ class PostsController extends Controller
 
     public function index()
     {
-        return view('blog.index')->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+
+        $posts = Post::orderBy('updated_at', 'DESC')->with('tags')
+                                                    ->get();
+       
+        return view('blog.index')->with(compact('posts'));
     }
 
     /**
@@ -68,16 +72,20 @@ class PostsController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-
-        for($i = 0; $i < sizeof($tags); $i++) {
-            Post_has_tag::create([
-                'post_id'=> $post->id,
-                'tag_id' => $tags[$i]
-            ]);
-        }
       
 
-        return redirect('/blog')->with('message_red', 'Postagem postada com sucesso!');
+        $post->tags()->attach($tags);
+
+
+        // for($i = 0; $i < sizeof($tags); $i++) {
+        //     Post_has_tag::create([
+        //         'post_id'=> $post->id,
+        //         'tag_id' => $tags[$i]
+        //     ]);
+        // }
+      
+       
+        return redirect('/blog',)->with('message_red', 'Postagem postada com sucesso!');
 
     }
 
@@ -90,6 +98,7 @@ class PostsController extends Controller
 
     public function show($slug)
     {
+        
         return view('blog.show')
             ->with('post', Post::where('slug', $slug)->first());
     }

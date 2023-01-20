@@ -49,6 +49,7 @@ class TagsController extends Controller
      */
         public function show($slug)
         {
+       
           
              return view('blog.by_tag');
             //     ->with('posts', Post::where('slug', $slug)->get());
