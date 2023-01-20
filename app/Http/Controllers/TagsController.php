@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Models\Post;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class TagsController extends Controller
@@ -49,9 +49,20 @@ class TagsController extends Controller
      */
         public function show($slug)
         {
+           
        
-          
-             return view('blog.by_tag');
+            $posts = Post::with('tags')->get();
+            $postsByTags = array();
+            foreach ($posts as $post) {
+                foreach($post['tags'] as $tag) {
+                   if($tag['slug'] == $slug) {
+                        $postsByTags[] = $post;
+                        $tagName = $tag['name'];
+                   }
+                }
+            }
+
+             return view('blog.by_tag')->with('posts', $postsByTags)->with('tag', $tagName);
             //     ->with('posts', Post::where('slug', $slug)->get());
         }
 

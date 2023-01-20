@@ -10,7 +10,7 @@
             <div class="text-description">
               
                 @foreach ($post['tags'] as $tag)
-                    <span class="tag">{{$tag['name']}} </span>
+                    <a href="/tags/{{$tag->slug}}"><span class="tag">{{$tag['name']}} </span></a>
                 @endforeach
                 <a  href="/blog/{{$post->slug}}"><h1>{{$post->title}}</h1></a>
                 <p>

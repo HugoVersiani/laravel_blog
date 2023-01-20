@@ -75,15 +75,6 @@ class PostsController extends Controller
       
 
         $post->tags()->attach($tags);
-
-
-        // for($i = 0; $i < sizeof($tags); $i++) {
-        //     Post_has_tag::create([
-        //         'post_id'=> $post->id,
-        //         'tag_id' => $tags[$i]
-        //     ]);
-        // }
-      
        
         return redirect('/blog',)->with('message_red', 'Postagem postada com sucesso!');
 

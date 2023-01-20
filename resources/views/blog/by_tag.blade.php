@@ -3,7 +3,7 @@
 @section('content')
     <section id="main-div" class="bg-light">
         <div class='space-between d-flex'>
-            <h1 id="latest" >Escritos: </h1>
+            <h1 id="latest" >{{$tag}} </h1>
         </div>
         <div id="main-section">
             @foreach ($posts as $key => $post)
