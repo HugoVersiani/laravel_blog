@@ -1,3 +1,6 @@
+
+
+
 const btnMobile = document.getElementById('btn-mobile');
 function toggleMenu(event) {
     if(event.type == 'touchstart') event.preventDefault()
@@ -13,12 +16,14 @@ btnMobile.addEventListener('touchstart', toggleMenu);
 function destroyAlert() {
     document.getElementById("alert").style.display="none";
 }
-
 ClassicEditor
-.create( document.querySelector( '.ckeditor' ) )
-.then( editor => {
-        console.log( editor );
+.create( document.querySelector( '#editor' ), {
+    mediaEmbed: {
+        previewsInData:true,
+        
+    }
+    
 } )
 .catch( error => {
-        console.error( error );
+    console.error( error );
 } );

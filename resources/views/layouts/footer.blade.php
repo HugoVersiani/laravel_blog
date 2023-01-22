@@ -1,16 +1,16 @@
 <footer class="bg-light d-flex"  id="footer">
     <div class="div-footer">
-        <a href="#">
+        <a href="https://www.linkedin.com/in/HugoVersiani/">
             <img alt="icone linkando linkedin" class="social-icon" src="{{asset('img/linkedin.svg')}}">
         </a>
-        <a href="#">
+        <a href="mailto:hugoversiani@live.com">
             <img alt="icone linkando email" class="social-icon" src="{{asset('img/envelope-solid.svg')}}"> 
         </a>
-        <a href="#">
+        <a href="https://github.com/HugoVersiani">
             <img alt="icone linkando github" class="social-icon" src="{{asset('img/github.svg')}}"> 
         </a>
-        <a href="#">
-            <img alt="icone linkando portofólio" class="social-icon" src="{{asset('img/passport-solid.svg')}}"> 
+        <a href="https://www.hugoversiani.blog">
+            <img alt="icone linkando portifólio" class="social-icon" src="{{asset('img/passport-solid.svg')}}"> 
         </a>
    </div>
     <div class="div-footer">

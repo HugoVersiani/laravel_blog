@@ -4,10 +4,10 @@
         <script src="https://kit.fontawesome.com/6b3f1a85d7.js" crossorigin="anonymous"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{asset('css/global.css')}}">
+      
          <title>Versiani</title>
-          <script src="//cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
-
+          <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+          <link rel="stylesheet" href="{{asset('css/global.css')}}">
     </head>
     <body>
         
