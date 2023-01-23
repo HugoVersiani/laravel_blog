@@ -167,7 +167,9 @@ function MyCustomUploadAdapterPlugin( editor ) {
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
         extraPlugins: [ MyCustomUploadAdapterPlugin ],
-
+        mediaEmbed: {
+                        previewsInData:true
+                    },
         // ...
     } )
     .catch( error => {
