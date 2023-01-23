@@ -19,6 +19,6 @@
         <span>© 2023</span>
     </div>
     <div  class="div-footer">
-        Blog desenvolvido em Laravel / PHP. Acesse o <a href="/">código fonte</a>.
+        Blog desenvolvido em Laravel / PHP. Acesse o <a href="https://github.com/HugoVersiani/laravel_blog.git">código fonte</a>.
     </div>
 </footer>
