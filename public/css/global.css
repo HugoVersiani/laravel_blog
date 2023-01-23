@@ -172,7 +172,7 @@ li {
     background-color: rgb(240, 240, 240);
 }
 
-p>figure>img {
+figure>img {
     max-width:80%;
     width: auto;
     height: auto;
