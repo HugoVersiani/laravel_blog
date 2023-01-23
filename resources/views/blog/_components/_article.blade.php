@@ -1,7 +1,7 @@
 <div class="line"></div>
     <section class="section-preview d-flex">
-        <div style="background-image:url({{asset('images/'.$post->image_path)}})" class="left-content">
-            
+        <div class="left-content">
+            <img class="img-post" src="{{asset('images/'.$post->image_path)}}">
             {{-- <span class="date-span">
                 Por {{$post->user->name}}, {{date('j M Y', strtotime($post->updated_at) )}}
             </span> --}}

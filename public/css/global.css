@@ -140,6 +140,12 @@ li {
 
 }
 
+.img-post {
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
 .title_div {
    align-items: center;
 }
