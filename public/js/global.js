@@ -16,14 +16,7 @@ btnMobile.addEventListener('touchstart', toggleMenu);
 function destroyAlert() {
     document.getElementById("alert").style.display="none";
 }
-ClassicEditor
-.create( document.querySelector( '#editor' ), {
-    mediaEmbed: {
-        previewsInData:true,
-        
-    }
-    
-} )
-.catch( error => {
-    console.error( error );
-} );
+
+
+
+$('#my-select').multiSelect()

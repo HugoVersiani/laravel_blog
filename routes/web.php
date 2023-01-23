@@ -17,6 +17,7 @@ use App\Http\Controllers\TagsController;
 Route::get('/', [PagesController::class, 'index']);
 Auth::routes();
 Route::resource('/blog', PostsController::class);
+Route::post('/blog/image_upload', [PostsController::class, 'upload'])->name('upload');
 Route::resource('/tags', TagsController::class);
 
 Route::get('/home',  [\App\Http\Controllers\HomeController::class, 'index'])->name('home');

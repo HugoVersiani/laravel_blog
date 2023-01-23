@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
       
          <title>Versiani</title>
-          <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+
+          <link href="{{asset('multiselect/css/multi-select.css')}}" media="screen" rel="stylesheet" type="text/css">
           <link rel="stylesheet" href="{{asset('css/global.css')}}">
+
     </head>
     <body>
         
@@ -21,5 +23,6 @@
        
        
     </body>
+    <script src="{{asset('multiselect/js/jquery.multi-select.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/global.js')}}" ></script>
 </html>

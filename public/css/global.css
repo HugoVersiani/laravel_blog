@@ -93,6 +93,13 @@ li {
     display: block;
     padding: .5rem;
 }
+.ck-editor__main {
+    margin: 0 0 50px 0 ;
+}
+
+.ck-editor__editable {
+    min-height: 30vh;
+}
 
 #footer {
     max-height: 10vh;
