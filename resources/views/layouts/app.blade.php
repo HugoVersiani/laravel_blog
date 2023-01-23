@@ -7,7 +7,7 @@
       
          <title>Versiani</title>
 
-          <link href="{{asset('multiselect/css/multi-select.css&v=0.1')}}" media="screen" rel="stylesheet" type="text/css">
+          <link href="{{asset('multiselect/css/multi-select.css&v=0.2')}}" media="screen" rel="stylesheet" type="text/css">
           <link rel="stylesheet" href="{{asset('css/global.css')}}">
 
     </head>
